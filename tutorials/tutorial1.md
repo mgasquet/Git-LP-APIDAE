@@ -271,7 +271,7 @@ Vous avez testé de **pousser** des modifications sur le repository distant, vou
 ### Ajout de fonctionnalités
 
 Vous allez maintenant ajouter quelques nouvelles commandes à l'application d'édition de texte!  
-Pour les deux prochains exercices (et pour pouvoir vous montrer quelque chose d'interessant dans la prochaine section), vous devez effectuer **plusieurs commits** pendant le développement de la fonctionnalité (ne pas avoir un seul commit par fonctionnalité). A vous de voir quand effectuer ces commits.
+Pour le prochain exercice (et pour pouvoir vous montrer quelque chose d'interessant dans la prochaine section), vous devez effectuer **plusieurs commits** pendant le développement de la fonctionnalité (ne pas avoir un seul commit par fonctionnalité). A vous de voir quand effectuer ces commits.
 
 <div class="exercise">
 
@@ -310,36 +310,6 @@ Pour les deux prochains exercices (et pour pouvoir vous montrer quelque chose d'
 5. Testez que votre nouvelle commande fonctionne comme attendu.
 
 6. Normalement, vous avez effectuez plusieurs `commits`. Poussez vos modifications sur le repository distant.
-</div>
-
-Maintenant, nous allons ajouter une troisième commande!
-
-<div class="exercise">
-
-1. On souhaite ajouter une commande pour mettre en **majuscules** une portion du texte. Commencez par définir et compléter le code de la méthode suivante dans `Document` :
-
-    ```java
-    public void majuscules(int start, int end) {
-        //TO-DO!
-    }
-    ```
-
-    **Astuces** : 
-
-    - Pour extraire une portion d'une chaîne de caractères, servez vous de la méthode `substring`. 
-    - Pour passer l'intégralité d'une chaîne de caractrèes, on utilise la méthode `toUpper`.
-    - Reservez-vous de la méthode `remplacer`!
-
-2. On souhaite appeller la commande ainsi :
-
-    ```bash
-    majuscules;depart;fin
-    ```
-
-    Définissez donc une classe adéquate pour cette `commande` et enregistrez là dans la `factory`.
-
-3. Testez votre commande et poussez vos modifications sur votre repository **github**.
-
 </div>
 
 ### Regroupper des commits (et éventuellement réparer ses bêtises!)
@@ -402,13 +372,41 @@ Depuis cet état, votre repository distant va refuser d'intégrer vos changement
 
 <div class="exercise">
 
-1. Regrouppez tous les commits ayant servi au développement de la commande `majuscules` en un seul.
-
-2. Faites de même avec les commits pour le développment de la commande `remplacer`.
+1. Regrouppez tous les commits ayant servi au développement de la commande `remplacer` en un seul.
 
 3. Observez l'historique des commits.
 
 4. Poussez sur votre repository github **en forçant**.
+
+</div>
+
+Maintenant, nous allons ajouter une troisième commande! Là aussi, effectuez plusieurs commits.
+
+<div class="exercise">
+
+1. On souhaite ajouter une commande pour mettre en **majuscules** une portion du texte. Commencez par définir et compléter le code de la méthode suivante dans `Document` :
+
+    ```java
+    public void majuscules(int start, int end) {
+        //TO-DO!
+    }
+    ```
+
+    **Astuces** : 
+
+    - Pour extraire une portion d'une chaîne de caractères, servez vous de la méthode `substring`. 
+    - Pour passer l'intégralité d'une chaîne de caractrèes, on utilise la méthode `toUpper`.
+    - Reservez-vous de la méthode `remplacer`!
+
+2. On souhaite appeller la commande ainsi :
+
+    ```bash
+    majuscules;depart;fin
+    ```
+
+    Définissez donc une classe adéquate pour cette `commande` et enregistrez là dans la `factory`.
+
+3. Testez votre commande. Regrouppez vos commits puis poussez vos modifications sur votre repository **github**.
 
 </div>
 
