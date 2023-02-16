@@ -324,7 +324,7 @@ On utilise pour cela la commande suivante :
 git rebase -i HEAD~N
 ```
 
-Ici, `N` doit être remplacé par le nombre de commits à regroupper (les `N` derniers commits). Si on doit faire lre regrouppement jusqu'au premier commit (cas qui arrive peu fréquemment) on remplace le `HEAD~N` par `--root`. Une fois la commande éxécutée, une interface s'affiche, en console.  
+Ici, `N` doit être remplacé par le nombre de commits à selectionner (les `N` derniers commits). Si on doit veut sélectionner jusqu'au premier commit du repository on remplace le `HEAD~N` par `--root`. Une fois la commande éxécutée, une interface s'affiche, en console.  
 Par exemple :
 
 ```bash
@@ -334,7 +334,7 @@ pick f2ep173 chat fini
 pick t2du1z9 ha non en fait, fix du chat...
 ```
 
-Les commits sélectionnés sont présentés du plus ancien au plus récent. Il suffit alors de remplacer le mot clé `pick` par `s` (pour squash) pour tous les commits **sauf le premier**. On quitte ensuite cette interface en faisant `Echap` puis `:wq` (écrire et quitter).
+Les commits sélectionnés sont présentés du plus ancien au plus récent. Il suffit alors de remplacer le mot clé `pick` par `s` (pour squash) pour tous les commits qu'on veut **squasher**. Tous les commits labellés par **s** seront alors fusionnés dans le premier commit labellé **pick** au-dessus d'eux. On quitte ensuite cette interface en faisant `Echap` puis `:wq` (écrire et quitter).
 
 ```bash
 pick 2e5d3fd debut ajout chat
@@ -406,7 +406,7 @@ Maintenant, nous allons ajouter une troisième commande! Là aussi, effectuez pl
 
     Définissez donc une classe adéquate pour cette `commande` et enregistrez là dans la `factory`.
 
-3. Testez votre commande. Regrouppez vos commits puis poussez vos modifications sur votre repository **github**.
+3. Testez votre commande. Regrouppez vos commits puis poussez vos modifications sur votre repository **Github**.
 
 </div>
 
@@ -553,6 +553,14 @@ Une fois fusionnée, la branche `feature/chat` n'est plus utile, on peut la supp
 ```bash
 git branch -D feature/chat
 ```
+
+Lors d'un merge, en cas de conflit (si le **merge** automatique échoue) il faut :
+
+- Ouvrir les fichiers concernés par les conflits. Ils présentent des sections avec la source des conflits (les deux versions qui différent)
+
+- Editer ces fichiers pour ne garder que les modifications qui nous intéressent et adapter si besoin.
+
+- Ajouter les fichiers (`git add .`), faire un `commit` puis un `push`.
 
 Il est aussi tout à fait possible (si besoin) de resynchroniser une sous-branche dérivée de `development` en faisant un `pull` de la branche `development` depuis la sous-branche. Ainsi, la sous-branche itnégrera les derniers ajouts sur development. Il faut utiliser ce mécanisme seulement si nécessaire, c'est à dire si la fonctionnalité doit avoir besoin qu'une autre fonctionnalité soit complétée afin de porusuivre le dévelopment, par exemple.
 
